@@ -1,22 +1,197 @@
+@charset "UTF-8";
 
-/** 清除默认样式 **/
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
-dl, dt, dd, ul, ol, li, pre,form, fieldset, legend, button, input, textarea, 
-th, td {
+blockquote,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
     margin: 0;
-    padding: 0;   }
-ul,li{list-style: none;}
-a{text-decoration: none;}
-i,em{font-style:normal;}
+    padding: 0
+}
 
-/* 重置 HTML5 元素 */
- article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
-summary, time, mark, audio, video {
+li,
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+em,
+i {
+    font-style: normal
+}
+
+article,
+aside,
+audio,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+mark,
+menu,
+nav,
+section,
+summary,
+time,
+video {
     display: block;
     margin: 0;
-    padding: 0;
-} 
-/* 头部 */
-section{
+    padding: 0
+}
+
+section {
     height: 100%
 }
+
+section header .top-box {
+    width: 100%;
+    height: 30px;
+    background: #f7f7f7;
+    border: 1px solid #fff
+}
+
+section header .top-box .top {
+    width: 1187px;
+    height: 100%;
+    font-size: 12px;
+    color: #a1a1a1;
+    margin: 0 auto
+}
+
+section header .top-box .top .img-box {
+    width: 75px;
+    height: 100%;
+    margin-top: 5px;
+    float: right
+}
+
+section header .top-box .top .a {
+    width: 360px;
+    height: 23px;
+    float: right;
+    margin-top: 7px
+}
+
+section header .top-box .top .a a {
+    color: #a1a1a1
+}
+
+section header .top-box .top .a span {
+    margin-left: 13px
+}
+
+section .xian {
+    width: 100%;
+    height: 1px;
+    background: #e2e2e2
+}
+
+.sosuo-box {
+    height: 88px;
+    width: 1187px;
+    margin: 0 auto;
+    
+}
+.input-box{
+    width: 450px;
+    height: 56px;
+    float: right;
+    margin-top: 35px;
+margin-right: -72px}
+.gwc{
+    width: 105px;
+    height: 28px;
+    background: red;
+    float: right;
+    text-align: center;
+    line-height: 28px;
+    border: solid rgb(194, 194, 194) 1px;
+    color: #ffffff
+
+}
+.sou-a{
+    display:block;
+    width: 50px;
+    height: 28px;
+    border:1px rgb(194, 193, 193) solid;
+    border-left:none;
+    background: rgb(255, 0, 0);
+    float: right;
+    margin-right:22px;
+    text-align: center;
+    line-height: 28px;
+    color: #ffffff
+    
+} 
+.input-1{
+    color:#505050;
+    font-size: 13px;
+    color: #a1a1a1
+    
+    
+}
+.sosuo-box input{
+    width:260px;
+    height:28px;
+    border: none;
+    border: solid rgb(194, 194, 194) 1px;
+    float: right;
+  
+}
+.inp-p{
+    font-size: 12px;
+    color: #a1a1a1;
+    margin-left:20px;
+}
+.inp-p a{
+    margin-left: 15px;
+    color: #a1a1a1
+}
+ nav{
+     width: 1187px;
+     height: 78px;
+     margin: 0 auto;
+     background: rgb(255, 255, 255);
+ }
+ nav div{
+     float: left;
+ }
+ nav a{
+     display: block;
+     float: left;
+     width: 90px;
+     height: 20px;
+     text-align: center;
+      line-height: 18px; 
+     font-size:16px;
+     color: #505050;
+     border-right:1.3px rgb(240, 209, 209) solid;
+     margin-top: 20px;
+
+ }

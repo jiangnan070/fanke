@@ -1,0 +1,168 @@
+/* common */
+header,main,footer{margin: 0 auto;}
+/* header */
+header{
+    width: 1200px;
+    height: 60px;
+    /* background: green; */
+    margin-top: 10px;
+    padding-bottom: 10px;
+
+}
+header .a_logo{
+    display: block;
+    /* padding-top: 5px; */
+}
+/* main */
+main{
+    height: 592px;
+    width: 1200px;
+    /* background: red; */
+}
+main form .span1{
+    display: block;
+    width: 1200px;
+    height: 15px;
+    /* background: #ccc; */
+    border-top: 1px solid #919191
+}
+main form .main_h-1{
+    width: 415px;
+    height: 35px;
+    float: right;
+    line-height: 35px;
+    margin:0 100px 0 0;
+    border-bottom: 2px solid #b81e20;
+    font-size: 20px;
+    color: #a2a2a2;
+    font-weight: bolder;
+}
+main form .main_h-1 .sp1{
+    font-size:14px;
+    float: right;
+}
+main form .main_h-1 .sp1 a{
+    color:#b52024;
+    margin: 0 0 0 3px;
+}
+main form .center{
+    width: 1200px;
+    height: 547px;
+    /* background: skyblue; */
+    margin-top: 30px;
+
+}
+main form .center .center-left{
+    width: 465px;
+    height: 500px;
+    float: left;
+    margin: 0 0 0 130px;
+    /* background: red; */
+
+}
+main form .center .center-right{
+    width: 415px;
+    height: 422.8px;
+    float: right;
+    margin: 10px 95px 0 0;
+    /* background: #ccc; */
+    overflow: inherit
+
+}
+main form .center .center-right .newtxt{
+    width: 415px;
+    height: 45px;
+}
+main form .center .center-right .newtxt .small-btn{
+    width: 262px;
+    height: 45px;
+    border:1px solid #ccc;
+}
+main form .center .center-right .newtxt .big-btn{
+    width: 410px;
+    height: 45px;
+    border:1px solid #ccc;
+}
+main form .center .center-right .reader{
+    width: 414px;
+    height: 78px;
+    margin: 25px 0 0 0 ;
+}
+.reader>a{
+    display: block;
+    width: 413px;
+    height: 45px;
+    background: #9A9A9A;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+
+}
+.reader>span{
+    margin:  0 0 10px 0;
+
+}
+.reader>span>span>a{
+    font-size: 12px;
+    color: #b52024;
+    display: inline-block;
+}
+
+/* footer */
+footer{
+    width: 1200px;
+    height: 120px;
+    /* background: yellow; */
+    font-size: 12px;
+
+}
+footer #footer-all{
+    width: 980px;
+    height: 120px;
+    margin: 0 auto;
+}
+footer #footer-all p{
+    text-align: center;
+    line-height: 14px;
+    /* margin: 0 auto; */
+    width: 980px;
+    height: 14px;
+    padding: 0 0 20px 0;
+    /* background: red; */
+}
+footer #footer-all .footer-center{
+    width: 980px;
+    height: 45px;
+    margin-bottom: 25px;
+    text-align: center;
+
+}
+#footer-all .footer-center .cxwzbtn{
+    display: inline-block;
+    width: 113px;
+    height: 42px;
+    margin: 0 10px 0 0 ;
+    background: url(../images/spritesbg.png) no-repeat 0px -400px;
+}
+#footer-all .footer-center .fzbtn{
+    display: inline-block;
+    width: 156px;
+    height: 45px;
+    margin: 0 10px 0 0 ;
+    background: url(../images/spritesbg.png) no-repeat 0px -448px;
+}
+#footer-all .footer-center .wsjybtn{
+    display: inline-block;
+    width: 96px;
+    height: 42px;
+    margin: 0 10px 0 0 ;
+    background: url(../images/spritesbg.png) no-repeat 0px -494px;
+}
+#footer-all .footer-center .jyxbtn{
+    display: inline-block;
+    width: 101px;
+    height: 42px;
+    background: url(../images/spritesbg.png) no-repeat -97px -494px;
+}

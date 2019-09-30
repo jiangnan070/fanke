@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
     <style>
+       
         .swiper-container {
             width: 1187px;
             height: 530px;
@@ -29,6 +30,34 @@
         .swiper-pagination {
             --swiper-pagination-color: rgb(228, 228, 222);
         }
+
+        ul{
+			width: 314px;
+            list-style: none;
+            z-index: 9999;
+            position: absolute;
+            top: 97px;
+           
+            
+
+		}
+		li{
+			width: 314px;
+			padding-left:5px;
+			line-height: 40px;
+			height: 35px;
+            font-size:15px;
+            background: rgb(255, 245, 245);
+            z-index: 999;
+            border-radius: 10px;
+            margin-top: 2px;
+            
+            
+           
+		}
+		li:hover{
+			background: #73afb9;
+		}
     </style>
 </head>
 
@@ -56,8 +85,13 @@
             <div class="input-box">
                 <a class="gwc" href="#">购物车</a>
                 <a class="sou-a" href="#">搜索</a>
+                <div class="box"> 
                 <input class="input-1" type="text" value="搜“熊本熊”，体验与众不同" onfocus="if(value=='搜“熊本熊”，体验与众不同')value=''"
                     onblur="if(!value)value='搜“熊本熊”，体验与众不同'" name="">
+                    <ul>
+			
+                        </ul>
+                    </div>
                 <p class="inp-p">热门搜索：<a href="#">免烫衬</a><a href="#">Adidas</a><a href="#">NIKE</a><a
                         href="#">PUMA</a><a href="#">裤子</a><a href="#">T恤</a></p>
             </div>
@@ -231,5 +265,51 @@
             dynamicBullets: true,
             dynamicMainBullets: 2
         },
-    })
+    });
+
+    //jsonp
+    //需求分析:
+	//1 在搜索框输入文本
+	//2 在输入过程中会自动根据输入内容提示
+	//3 鼠标点击内容会跳转到搜索页面
+	var inp =document.querySelector('input');
+	var ul = document.querySelector('ul');
+	var MAX = 5;
+	inp.oninput = inp.onpropertychange = function(){
+		//在搜索框输入文本
+		var word = this.value;//输入框中的文本
+		var script = document.createElement('script');		
+        script.src = "http://page.vanclimg.com/autocompletehandler.ashx?callback=jqautocompletecallback&k="+word+"&limit=13";
+        console.log(this.value);
+        if(this.value==""){
+            ul.style.display="none";
+        }
+
+		//创建一个函数,以备调用
+		window.jqautocompletecallback = function(data){
+            console.log(data)
+            console.log(data[0].name);
+			//获取结果数组
+			var list = data;
+			//定义ul里面的字符串
+			var str = "";
+			for(var i=0;i<(list.length>MAX?MAX:list.length);i++){
+                str+="<li>"+list[i].name+'<span style="position: absolute;left:240px;color:red;">'+'约'+list[i].count+'条'+'</span>'+"</li>";
+                ul.style.display="block"
+            };
+            
+            ul.innerHTML = str;	
+            
+            		
+		}
+		//把生成的script标签放入body中
+		document.body.appendChild(script);
+	}
+	//事件委托
+	ul.onclick = function(e){		
+		var target = e.target;
+		if(target.nodeName.toLowerCase()=="li"){
+            window.location.href ="http://s.vancl.com/search?k="+target.innerHTML+"&orig=3"
+		}
+	}
 </script>

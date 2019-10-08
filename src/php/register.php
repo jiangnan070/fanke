@@ -12,7 +12,7 @@
   //根据结果判断是否注册成功
   if($result){
       $jieguo = array('code'=>0,'data'=>$username);
-      echo echo json_encode($jieguo);
+      echo json_encode($jieguo);
   }else{
       $jieguo = array('code'=>1);
       echo json_encode($jieguo);

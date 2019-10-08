@@ -310,11 +310,17 @@ $(function () {
                      var u = $('[name=un]').val();
                      var p = $('[name=pw]').val();
                      $.ajax({
-                        url: '../php/register.php',
-                        type: 'post',
+                        url: 'http://10.36.144.236/fanke/src/php/register.php',
+                        type: 'POST',
+                        dataType: "JSON",
                         data:{un:u,pw:p},
                         success: function (res) {
-                           console.log(res)
+                           if(res.code === 0){
+                              alert('注册成功，请先第一次登录')
+                              location.href = 'http://10.36.144.236/fanke/src/login.html';
+                           }else if(res.code === 1){
+                              alert('用户名已存在，请重新输入')
+                           }
                         }
                      })
                   }

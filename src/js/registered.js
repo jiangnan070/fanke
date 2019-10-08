@@ -43,6 +43,7 @@ $(function () {
                   return;
                } else {
                   flag2 = true;
+                  $('.inp').eq(2).trigger('focus');
                }
 
                if (phoneReg.test($('.inp').eq(1).val())) {

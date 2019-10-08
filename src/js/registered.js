@@ -24,6 +24,20 @@ $(function () {
             for (var i = 0; i < 6; i++) {
                smsReg += this.common().getRandom(9);
             }
+            if($('#ckbtn').prop('checked') === true){
+               $('#zhucebtn').css('background-color', '#b52024');
+            }
+            var counter = 0;  
+            if (window.history && window.history.pushState) {  
+                             $(window).on('popstate', function () {  
+                                 window.history.pushState('forward', null, '#');  
+                                 window.history.forward(1);  
+                                 //alert("不可回退");  
+                                // location.replace(document.referrer);//刷新
+                        });  
+              }  
+              window.history.pushState('forward', null, '#'); //在IE中必须得有这两行  
+              window.history.forward(1);  
             this.event()
          },
          event() {
@@ -340,6 +354,8 @@ $(function () {
                   'text-decoration': 'none'
                })
             })
+
+
          },
          common() {
             return {

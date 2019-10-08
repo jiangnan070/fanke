@@ -1,20 +1,19 @@
-<?php
-  //引入连接数据库
-  include './connect.php';
+<?php 
+ include './connect.php';
+ //获取请求参数:用户名和密码
+ $username = $_REQUEST['un'];
+ $password = $_REQUEST['pw'];
 
-  //根据请求参数中的username和password对象的值来注册用户
-  $username = $_REQUEST['un'];
-  $password = $_REQUEST['pw'];
-  //书写sql语句 插入语句
-  $insert = "INSERT INTO user_info(username,password) VALUES ('$username','$password')";
-  //执行sql语句
-  $result = mysqli_query($conn,$insert);
-  //根据结果判断是否注册成功
-  if($result){
-      $jieguo = array('code'=>0,'data'=>$username);
-      echo echo json_encode($jieguo);
-  }else{
-      $jieguo = array('code'=>1);
-      echo json_encode($jieguo);
-  }
+ //书写查询的sql语句
+ $query = "SELECT * FROM user_info WHERE username='$username' and password='$password'";
+ //执行sql语句
+ $result = mysqli_query($conn,$query);
+ //输出结果
+ if(mysqli_num_rows($result)){
+     $jieguo = array('code'=>0,'data'=>$username);
+     echo json_encode($jieguo);
+ }else{
+     $jieguo = array('code'=>1);
+     echo json_encode($jieguo);
+ }
 ?>

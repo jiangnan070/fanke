@@ -74,16 +74,20 @@ main form .center .center-right .newtxt{
     width: 415px;
     height: 45px;
 }
+
 main form .center .center-right .newtxt .small-btn{
-    width: 262px;
+    width: 247px;
     height: 45px;
     border:1px solid #ccc;
+    padding-left:15px;
 }
 main form .center .center-right .newtxt .big-btn{
-    width: 410px;
+    width: 395px;
     height: 45px;
     border:1px solid #ccc;
+    padding-left:15px;
 }
+
 main form .center .center-right .reader{
     width: 414px;
     height: 78px;

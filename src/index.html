@@ -13,8 +13,26 @@
     <!-- <h1>项目启动</h1> -->
     <header></header>
     <nav></nav>
-    <main></main>
+    <main id="result"></main>
     <footer></footer>
-
+<script>
+    function getCookie(key) {
+            var cookiestr = document.cookie;
+            var list = cookiestr.split(";");
+            for (var i in list) {
+                var arr = list[i].split("=");
+                if (trim(arr[0]) == key) {
+                    return arr[1];
+                }
+            }
+            return null;
+        } 
+        function trim(str) {
+            return str.replace(/\s+/g, "");
+        }
+    
+      document.getElementById('result').innerHTML = '欢迎您，亲爱的'+getCookie('un');
+ 
+</script>
 </body>
 </html>

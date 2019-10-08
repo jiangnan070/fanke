@@ -10,7 +10,7 @@
  $result = mysqli_query($conn,$query);
  //输出结果
  if(mysqli_num_rows($result)){
-     $jieguo = array('code'=>0,'data'=>$username);
+     $jieguo = array('code'=>0,'data'=>array('un'=>$username,'pw'=>$password));
      echo json_encode($jieguo);
  }else{
      $jieguo = array('code'=>1);

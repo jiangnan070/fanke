@@ -5,7 +5,11 @@
  $password = $_REQUEST['pw'];
 
  //书写查询的sql语句
+<<<<<<< HEAD
  $query = "SELECT * FROM info WHERE username='$username' and password='$password'";
+=======
+ $query = "SELECT * FROM user_info WHERE username='$username' and password='$password'";
+>>>>>>> wujunjie
  //执行sql语句
  $result = mysqli_query($conn,$query);
  //输出结果

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>关联注册凡客账号</title>
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/registerUserinfo.css">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="container-fluid container-fluid-border">
+        <div class="container container-width">
+            <center>
+                <div id="head" align="left">
+                    <a class="logo" href="http://help.vancl.com/"></a>
+                    <p>
+                        <a href="http://help.vancl.com/" target="_blank">帮助</a>
+                    </p>
+                </div>
+            </center>
+        </div>
+    </div>
+    <!-- 主体 -->
+    <div class="container main">
+        <div class="greetTitle">
+            <p><span style="color:red;">欢迎加入凡客诚品！</span>若已有凡客账号建议通过用户和密码关联，浏览购物更方便</p>
+        </div>
+
+        <form action="" class="userForm">
+            <div class="already"><label for=""><input type="radio" name="register"
+                        value="已有凡客账号">&nbsp;&nbsp;已有凡客账号</label></br>
+            </div>
+            <div class="noId">
+                <label for=""><input type="radio" name="register" placeholder="还没有凡客账号"
+                        checked>&nbsp;&nbsp;还没有凡客账号</label>
+            </div>
+            <!-- 有凡客账号直接登录 -->
+            <div class="registerId regis1" style="display:none">
+                <div class="regBox">
+                    <label for=""><span class="fromText">用户名：</span><input class="inp loignReg unlogin" type="text"  name=""
+                            placeholder="请输入用户名"></label>
+                    <p class="errorVerb">用户名必须是6-16位，数字，大小字母，和符号组成</p>
+                </div>
+                <div class="regBox" style="margin-bottom:20px;">
+                    <label for=""><span class="fromText">请输入密码：</span><input class="inp loignReg pwlogin" type="password" name=""
+                            placeholder="请输入密码"></label>
+                    <p class="errorVerb">用户名必须是6-16位，数字，大小字母，和符号组成</p>
+                </div>
+            </div>
+            <!-- 没有凡客账号时注册 -->
+            <div class="registerId regis2">
+                <div class="regBox">
+                    <label for=""><span class="fromText">用户名：</span><input class="inp inpReg unreg" type="text" name="un"
+                            placeholder="请输入用户名"></label>
+                    <p class="errorHint">用户名必须是6-16位，数字，大小字母，和符号组成</p>
+                </div>
+                <div class="regBox">
+                    <label for=""><span class="fromText">请输入密码：</span><input class="inp inpReg pwreg" type="password" name="pw"
+                            placeholder="请输入密码"></label>
+                    <p class="errorHint">密码必须是6-16位，数字，大小字母，符号组成</p>
+                </div>
+                <div class="regBox">
+                    <label for=""><span class="fromText">请输入确认密码：</span><input class="inp inpReg qrreg" type="password"
+                            placeholder="再一次输入密码"></label>
+                    <p class="errorHint">密码不一致，请重新输入</p>
+                </div>
+                <div class="yzm regBox">
+                    <label for="" class="yzmlabel"><span class="fromText">验证码：</span><input class="inpyzm inpReg yzrem" type="text"
+                            placeholder="请输入验证码"></label>
+                    <div class="yzmbox">123456</div><span class="yzmbtn"
+                        style="margin-left:3px;position:relative;bottom:5px;cursor:pointer;">换一题</span>
+                    <p class="errorHint">验证码错误，请重新输入</p>
+                </div>
+            </div>
+
+            <div class="submitBox">
+                <span class="sign fromSubmit" style="cursor:pointer;">确认</span>
+                <span style="cursor:pointer;">不关联，直接购物</span>
+            </div>
+        </form>
+    </div>
+
+    <!-- 底部 -->
+    <div class="container-fluid container-fluid-bottom-border">
+        <center>
+            <div class="bottom" align="center">
+                <div class="bottoms">
+                    <p class="bzp3">Copyright 2007 - 2019 vancl.com All Rights Reserved 京ICP证100557号
+                        京公网安备11011502002400号
+                        出版物经营许可证新出发京批字第直110138号</p>
+                </div>
+                <div id="footer">
+                    <div class="subFooter">
+                        <a href="http://www.mobiletrain.org" class="redLogo"></a>
+                        <a href="http://jd.com" class="costume"></a>
+                        <a href="http://www.baidu.com" class="wsjyBzzx"></a>
+                        <a href="http://taobao.com" class="vanclMsg"></a>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="./js/registerUserinfo.js"></script>
+    <!-- <script>
+       $.ajax({
+           url:'http://10.36.144.236/fanke/src/data.json',
+           success:function(res){
+               console.log(res)
+           }
+       })
+    </script> -->
+</body>
+
+</html>

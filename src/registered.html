@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>凡客诚品 - 会员免费注册</title>
     <link rel="stylesheet" href="./css/registered.css">
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="../node_modules">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="./js/registered.js"></script>
 </head>
 
 <body>
@@ -19,11 +20,11 @@
 
     </header>
     <main>
-        <form action="">
+        <form action="http://10.36.144.236/fanke/src/php/phone.php" method="POST">
             <span class="span1"></span>
             <h1 class="main_h-1">注册新用户
                 <span class="sp1">我已经注册，现在就
-                    <a href="#">登录</a>
+                    <a href="./login.html">登录</a>
                 </span>
             </h1>
             <div style="width: 100%;height:10px;overflow:hidden;clear:both;"></div>
@@ -33,31 +34,31 @@
                 </div>
                 <div class="center-right">
                     <div class="newtxt">
-                        <input type="text" class="small-btn" placeholder="验证码">
-                        <a href="#" style="width:140px;height: 45px;display: block;background: red;float: right;"></a>
+                        <input type="text" class="small-btn inp" placeholder="验证码">
+                        <a class="yzm" href="javascript:;" style="width:140px;height: 45px;display: block;border:1px solid #ccc;float: right;font-size:24px;text-align:center;line-height:45px;font-weight:900;">sa9s</a>
                     </div>
-                    <div class="newtxt" style="margin-top:15px;">
-                        <input type="text" class="small-btn" placeholder="请输入手机号码">
-                        <a href="#" style="width:140px;height: 45px;display: block;float: right;border: solid 1px #ccc;color:#b52024;text-align: center;line-height: 45px;">获取短信验证码</a>
+                    <div class="newtxt" style="margin-top:20px;">
+                        <input type="text" class="small-btn inp" placeholder="请输入手机号码" name="phone">
+                        <a href="javascript:;" class="smsReg" style="width:140px;height: 45px;display: block;float: right;border: solid 1px #ccc;color:#b52024;text-align: center;line-height: 45px;background: #f5f5f5;">获取短信验证码</a>
                     </div>
-                    <div class="newtxt" style="margin-top:15px;">
-                        <input type="text" class="big-btn" placeholder="请填手机验证码">
+                    <div class="newtxt" style="margin-top:20px;">
+                        <input type="text" class="big-btn inp" placeholder="请填手机验证码">
                         <!-- <span style="width:50px"></span> -->
                     </div>
-                    <div class="newtxt" style="margin-top:15px;" >
-                        <input type="text" class="big-btn" placeholder="设定登陆密码">
+                    <div class="newtxt" style="margin-top:20px;" >
+                        <input type="password" class="big-btn inp" placeholder="设定登陆密码" name="pw">
                         <!-- <span style="width:50px"></span> -->
                     </div>
-                    <div class="newtxt" style="margin-top:15px;">
-                        <input type="text" class="big-btn" placeholder="再次输入密码">
+                    <div class="newtxt" style="margin-top:20px;">
+                        <input type="password" class="big-btn inp" placeholder="再次输入密码">
                         <!-- <span style="width:50px"></span> -->
                     </div>
                     <div class="reader">
-                        <span>
+                        <span class="ckbtn">
                                 <input type="checkbox" id="ckbtn">
                                 <span>请阅读<a href="#">《VANCL凡客诚品服务条款》</a></span>
                         </span>
-                        <a href="#" id="zhucebtn">立即注册</a></div>
+                        <a href="javascript:;" id="zhucebtn">立即注册</a></div>
                  </div>
             </div>
         </form>

@@ -40,9 +40,9 @@ gulp.task('html', function (done) {
 })
 //压缩图片
 gulp.task('image', function (done) {
-    gulp.src('./src/img/**')
+    gulp.src('./src/images/**')
     .pipe(loader.imagemin())
-    .pipe(gulp.dest('./dist/img/'));
+    .pipe(gulp.dest('./dist/'));
     done();
 })
 //执行所有任务

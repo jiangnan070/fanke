@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .fanke-pingjia {
+            margin: 200px auto 0;
+            width: 1200px;
+            height: 1165px;
+            /* background: red; */
+        }
+
+        .fanke-pingjia .pingjia-left {
+            width: 190px;
+            height: 1165px;
+            /* background: gray; */
+            float: left;
+            /* margin: 0 20px 0 200px; */
+            border: 1px solid #bbbbbb;
+        }
+
+        .fanke-pingjia .pingjia-right {
+            width: 980px;
+            height: 1100px;
+            /* background: green; */
+            float: right;
+        }
+
+        .pingjia-left>h6 {
+            border-bottom: 1px solid #bbb;
+            width: 165px;
+            height: 41px;
+            line-height: 41px;
+            font-size: 12px;
+            padding: 0 0 0 25px;
+
+
+        }
+
+        .pingjia-left>ul {
+            width: 133px;
+            height: 1165px;
+            margin: 25px auto 25px;
+            font-size: 12px;
+
+        }
+
+        .pingjia-left ul>li {
+            width: 130px;
+            height: 206px;
+            text-align: center;
+            /* padding: 0 10px 0 0; */
+
+            /* left: -28px; */
+
+        }
+
+        .pingjia-left ul>li>div {
+            width: 160px;
+            height: 160px;
+            position: relative;
+        }
+
+        .pingjia-left ul>li>div>img {
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            left: -14px;
+
+        }
+
+        .pingjia-right .pingjia-ques {
+            width: 980px;
+            height: 749px;
+            /* background: red; */
+            border: 1px solid #b4b4b4;
+        }
+
+        .pingjia-right .pingjia-newques {
+            width: 980px;
+            /* height: 299px; */
+            /* background: yellow; */
+            border: solid 1px #b4b4b4;
+            margin: 48px 0 0 0;
+        }
+
+        .pingjia-right .pingjia-ques .ques-box1 {
+            width: 980px;
+            height: 41px;
+            /* background: skyblue; */
+            border-bottom: 1px solid #b4b4b4;
+        }
+
+        .pingjia-right .pingjia-ques .ques-box2 {
+            width: 916px;
+            height: 663px;
+            /* background: #ccc; */
+            margin: 0 auto;
+
+        }
+
+        .ques-box2 .ques-box2_all {
+            width: 916px;
+            height: 166px;
+            /* background: yellow; */
+            border-bottom: #b4b4b4 dashed 1px;
+        }
+
+        .ques-box2_all .ques-box2_first {
+            width: 759px;
+            height: 165px;
+            background: skyblue;
+            float: left;
+
+        }
+
+        .ques-box2_all .ques-box2_second {
+            width: 157px;
+            height: 40px;
+            background: skyblue;
+            margin: 55px 0 25px 0;
+            background: yellow;
+            float: right;
+        }
+
+        .ques-box2_first .ques-box2_one {
+            width: 610px;
+            height: 48.6px;
+            background: red;
+            float: left;
+        }
+
+        .ques-box2_first .ques-box2_two {
+            width: 130px;
+            height: 115px;
+            background: green;
+            float: right;
+            margin: 0 10px 0 0;
+        }
+
+        .ques-box1>p {
+            float: left;
+            line-height: 41px;
+            font-size: 12px;
+        }
+
+        .ques-box1>p:nth-child(1) {
+            padding: 0 0 0 25px;
+            font-weight: bolder;
+            color: #333333;
+
+        }
+
+        .ques-box1>p:nth-child(2) {
+            padding: 0 10px 0 10px;
+        }
+
+        .pinglunBtn {
+            display: block;
+            width: 120px;
+            height: 32.8px;
+            background: #d46a6a;
+            float: right;
+            line-height: 32.8px;
+            text-align: center;
+            margin: 4px 32px 0 0;
+            color: #fff;
+            font-size: 12px;
+
+        }
+
+        .ques-box2>.areaPage {
+            width: 949px;
+            height: 39px;
+            /* background: red; */
+
+        }
+
+        .ques-box2>.areaPage>span {
+            display: block;
+            float: right;
+            margin: 12px 14px 0 0;
+            color: #A10000;
+            font-weight: bolder;
+        }
+
+        .pingjia-newques>h3 {
+            width: 955px;
+            height: 40px;
+            /* background: skyblue; */
+            padding: 0 0 0 25px;
+            font-size: 12px;
+            color: #333;
+            border-bottom: 1px solid #b4b4b4;
+
+        }
+
+        .pingjia-newques>h3>span {
+            float: left;
+            line-height: 40px;
+
+        }
+
+        .pingjia-newques>h3>.quesBtn {
+            display: block;
+            width: 120px;
+            height: 33px;
+            background: #d46a6a;
+            float: right;
+            line-height: 33px;
+            text-align: center;
+            margin: 3px 32px 0 0;
+        }
+
+        /* 提问按钮 */
+        .pingjia-newques>h3>.quesBtn {
+            color: #fff;
+            font-size: 12px;
+
+        }
+
+        /* 提问后的列表 */
+        .quesList {
+            width: 918px;
+            /* height: 212px; */
+            /* background: red; */
+            margin: 0 auto;
+            /* border-bottom: 1px dotted #b4b4b4; */
+        }
+
+        /* 提问列表内容 */
+        .qeusL_con {
+            width: 918px;
+            height: 105px;
+            /* background: red; */
+            border-bottom: 1px dotted #b4b4b4;
+            /* margin:  */
+        }
+
+        .qeusL_M {
+            height: 20px;
+            margin: 20px 0 30px 0;
+        }
+
+        .qeusL_con>.qeusL_L>.qeusL_M>h4 {
+            float: left;
+            color: #000;
+            font-size: 12px;
+        }
+
+        .qeusL_con>.qeusL_L>.qeusL_M>h5 {
+            float: right;
+
+
+        }
+
+        .qeusL_con>.qeusL_L>.qeusL_M>h5>a {
+            color: #7c7b7b;
+            font-size: 12px;
+        }
+
+        .qeusL_con>.qeusL_L>.qeusL_M>h4>.qeusH_Q {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background: #a10000;
+            line-height: 20px;
+            text-align: center;
+            float: left;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        /* 提问列表页码 */
+        .qeusLPage {
+            width: 945px;
+            height: 44px;
+            /* background: skyblue; */
+        }
+
+        .qeusLPage>span {
+            display: block;
+            float: right;
+            padding: 15px 14px 0 0;
+            font-weight: bolder;
+            color: #A10000;
+        }
+
+        /* 客户回复列表 */
+        .qeusP_A {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background: #d46a6a;
+            line-height: 20px;
+            text-align: center;
+            float: left;
+            font-size: 16px;
+            color: #fff;
+
+        }
+
+        /* 提交问题 */
+        .Askquestion {
+            width: 980px;
+            height: 208px;
+            border: 1px solid #cfcfcf;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .Askquestion>h3 {
+            height: 37px;
+            margin: 0 3px;
+            font-size: 14px;
+            line-height: 35px;
+            font-weight: bolder;
+            background: url("./images/sprite0725.png") no-repeat scroll -1902px bottom;
+            color: #333333;
+            /* background: red; */
+        }
+
+        .Askquestion>h3>p {
+            height: 35px;
+            background: #fff;
+            margin: 0 0 0 13px;
+            /* background: yellow; */
+        }
+
+        .questionStyle {
+            width: 980px;
+            height: 13.6px;
+            margin: 13px 0 15px 23px;
+            position: relative;
+        }
+
+        .questionStyle>dt {
+            float: left;
+            color: #666666;
+            font-size: 12px;
+        }
+
+        .quiztype {
+            float: left;
+
+        }
+
+        .quiztype>li {
+            float: left;
+            margin-right: 40px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .textarea {
+            width: 980px;
+            height: 120.4px;
+            margin: 20px 0 15px 23px;
+        }
+
+        .textarea>dd {
+            width: 655px;
+            height: 120.4px;
+            float: left;
+        }
+
+        .textarea>dt {
+            float: left;
+        }
+
+        .textarea>dd>textarea {
+            width: 546px;
+            height: 69px;
+        }
+
+        /* 提问按钮 */
+        .tiwenBtn {
+            display: block;
+            width: 97px;
+            height: 27px;
+            background: url("./images/sprite0725.png") no-repeat scroll -1916px -401px;
+            cursor: pointer;
+            margin-top: 10px;
+            border: none 0;
+        }
+
+        #qtype {
+            width: 116px;
+            height: 18px;
+            line-height: 18px;
+            color: #a10000;
+            border: 1px solid #db9999;
+            background: url("./images/sprite0725.png") no-repeat scroll -2000px -310px #fff6f7;
+            position: absolute;
+            right: 90px;
+            top: -3px;
+            font-size: 12px;
+            display: none;
+
+
+
+        }
+
+        #qtype>strong {
+            background: url("./images/sprite0725.png") no-repeat scroll -2205px -310px transparent;
+            /* display: inline-block; */
+            height: 18px;
+            width: 24px;
+            float: left;
+        }
+
+        #qtype>span {
+            float: left;
+            line-height: 19px;
+            height: 18px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fanke-pingjia">
+        <div class="pingjia-left">
+            <h6>产品推荐</h6>
+            <ul>
+                <li>
+                    <div><img src="./images/login120412_newlogo.jpg" alt=""></div>
+                    <span>产品名字产品名字产品名字</span><br>
+                    <span>售价￥<span>198</span>
+                    </span>
+                </li>
+                <li>
+                    <div><img src="./images/login120412_newlogo.jpg" alt=""></div>
+                    <span>产品名字产品名字产品名字</span><br>
+                    <span>售价￥<span>198</span>
+                    </span>
+                </li>
+                <li>
+                    <div><img src="./images/login120412_newlogo.jpg" alt=""></div>
+                    <span>产品名字产品名字产品名字</span><br>
+                    <span>售价￥<span>198</span>
+                    </span>
+                </li>
+                <li>
+                    <div><img src="./images/login120412_newlogo.jpg" alt=""></div>
+                    <span>产品名字产品名字产品名字</span><br>
+                    <span>售价￥<span>198</span>
+                    </span>
+                </li>
+                <li>
+                    <div><img src="./images/login120412_newlogo.jpg" alt=""></div>
+                    <span>产品名字产品名字产品名字</span><br>
+                    <span>售价￥<span>198</span>
+                    </span>
+                </li>
+            </ul>
+
+        </div>
+        <div class="pingjia-right">
+            <div class="pingjia-ques">
+                <div class="ques-box1">
+                    <p><span>最新评论</span><span>(4)</span></p>
+                    <p><input type="radio">全部评论</p>
+                    <p><input type="radio">图片<span>(1)</span></p>
+                    <a href="#"><span class="pinglunBtn">我要评论</span></a>
+                </div>
+                <div class="ques-box2">
+                    <div class="ques-box2_all">
+                        <div class="ques-box2_first">
+                            <div class="ques-box2_one"></div>
+                            <div class="ques-box2_two"></div>
+                        </div>
+                        <div class="ques-box2_second"></div>
+                    </div>
+                    <div class="ques-box2_all">
+                        <div class="ques-box2_first">
+                            <div class="ques-box2_one"></div>
+                            <div class="ques-box2_two"></div>
+                        </div>
+                        <div class="ques-box2_second"></div>
+                    </div>
+                    <div class="ques-box2_all">
+                        <div class="ques-box2_first">
+                            <div class="ques-box2_one"></div>
+                            <div class="ques-box2_two"></div>
+                        </div>
+                        <div class="ques-box2_second"></div>
+                    </div>
+                    <div class="ques-box2_all">
+                        <div class="ques-box2_first">
+                            <div class="ques-box2_one"></div>
+                            <div class="ques-box2_two"></div>
+                        </div>
+                        <div class="ques-box2_second"></div>
+                    </div>
+                    <div class="areaPage">
+                        <span>1</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pingjia-newques">
+                <h3>
+                    <span>最新提问 (共<span id="qeusNum">2</span>条)</span>
+                    <a href="#" class="quesBtn" id="quesBtn">
+                        <div>我要提问</div>
+                    </a>
+                </h3>
+                <div class="quesList">
+                    <div class="qeusL_con">
+                        <div class="qeusL_L">
+                            <div class="qeusL_M">
+                                <h4>
+                                    <span class="qeusH_Q">Q</span>
+                                    <span>thir***：
+                                        <span>您好这双鞋有白色的吗</span>
+                                    </span>
+                                </h4>
+                                <h5 style="font-size: 12px;">
+                                    <span>2019-09-21</span>
+                                    <a href="#">我要回复<span>(0)</span></a>
+                                </h5>
+                            </div>
+
+                            <p class="qeusL_P">
+                                <span class="qeusP_A">A</span>
+                                <span style="font-size: 12px;">
+                                    亲爱的客户您好，此款商品并无白色款。感谢您的支持！祝您购物愉快！O(∩_∩)O
+                                </span>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="qeusL_con">
+                        <div class="qeusL_L">
+                            <div class="qeusL_M">
+                                <h4>
+                                    <span class="qeusH_Q">Q</span>
+                                    <span>thir***：
+                                        <span>适合什么季节穿？</span>
+                                    </span>
+                                </h4>
+                                <h5 style="font-size: 12px;">
+                                    <span>2019-09-18</span>
+                                    <a href="#">我要回复<span>(0)</span></a>
+                                </h5>
+                            </div>
+
+                            <p class="qeusL_P">
+                                <span class="qeusP_A">A</span>
+                                <span style="font-size: 12px;">
+                                    亲爱的客户您好，适合春秋季穿着，您也可以根据当地的气温尝试穿着的。感谢您的支持！祝您购物愉快！O(∩_∩)O
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- <div class="qeusLPage">
+                        <span>1</span>
+                    </div> -->
+
+
+                </div>
+
+            </div>
+            <div class="Askquestion">
+                <h3>
+                    <p>
+                        <span> 提问：凡客帆布鞋 复古 女款 黑色</span>
+                    </p>
+
+                </h3>
+                <input type="hidden" value="凡客帆布鞋 复古 女款 黑色">
+                <dl class="questionStyle">
+                    <dt>提问类型：</dt>
+                    <dd>
+                        <ul class="quiztype">
+                            <li>
+                                <input type="radio" name="radio" class="Radio"><span>商品提问</span>
+                            </li>
+                            <li>
+                                <input type="radio" name="radio" class="Radio"><span>促销活动提问</span>
+                            </li>
+                            <li>
+                                <input type="radio" name="radio" class="Radio"><span>库存及物流提问</span>
+                            </li>
+                            <li>
+                                <input type="radio" name="radio" class="Radio"><span>库存及物流提问</span>
+                            </li>
+                        </ul>
+                    </dd>
+                    <p id="qtype">
+                        <strong></strong>
+                        <span>请选择问题类型</span>
+                    </p>
+                </dl>
+
+
+                <dl class="textarea">
+                    <dt>提问内容：</dt>
+                    <dd>
+                        <textarea style="resize: none" id="txtArae"></textarea>
+                        <input type="button" class="tiwenBtn" id="tiwenBtn">
+                    </dd>
+                </dl>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        //入口函数
+        $(function () {
+           
+            //点击出现提问框
+            $('#quesBtn').click(function () {
+                $('.Askquestion').css('display', 'block')
+            })
+            //输入框中的文字提交到页面
+            $('#tiwenBtn').click(function () {
+                var radio = document.getElementsByName('radio');
+                for (var i = 0; i < radio.length; i++) {
+                    if (radio[i].checked) {
+                        var a = $('#txtArae').val();
+                        var q = $(
+                            "<div class='qeusL_con'><div class='qeusL_L'><div class='qeusL_M'><h4><span class='qeusH_Q'>Q</span><span>thir***：<span>" +
+                            a +
+                            "</span></span></h4><h5 style='font-size: 12px;'><span>" +
+                            CurentTime() +
+                            "</span><a href='#'>我要回复<span>(0)</span></a></h5></div></div> </div>"
+                        );
+                        var b = $("<div class='qeusLPage'><span>1</span></div>")
+                        if (a == "") {
+                            alert("请填写内容");
+                        } else {
+                            $('.quesList').append(q);
+                            $('.quesList').append(b);
+                            $('#qtype').css('display', 'none');
+
+                        }
+                        return;
+                    } else {
+                        $('#qtype').css('display', 'block');
+                    }
+                }
+            })
+            
+             //显示提问数量
+             var qeusNum=$('.qeusL_con').length
+             console.log(qeusNum)
+               $('qeusNum').html("qeusNum");
+            var myDate = new Date();
+            myDate.getYear(); //获取当前年份(2位)
+            myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+            myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+            myDate.getDate(); //获取当前日(1-31)
+            myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+            myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数)
+            myDate.getHours(); //获取当前小时数(0-23)
+            myDate.getMinutes(); //获取当前分钟数(0-59)
+            myDate.getSeconds(); //获取当前秒数(0-59)
+            myDate.getMilliseconds(); //获取当前毫秒数(0-999)
+            myDate.toLocaleDateString(); //获取当前日期
+            var mytime = myDate.toLocaleTimeString(); //获取当前时间
+            myDate.toLocaleString(); //获取日期与时间
+            function CurentTime() {
+                var now = new Date();
+
+                var year = now.getFullYear(); //年
+                var month = now.getMonth() + 1; //月
+                var day = now.getDate(); //日
+                var clock = year + "-";
+                if (month < 10)
+                    clock += "0";
+                clock += month + "-";
+                if (day < 10)
+                    clock += "0";
+                clock += day + " ";
+                return (clock);
+            }
+        })
+    </script>
+
+</body>
+
+</html>

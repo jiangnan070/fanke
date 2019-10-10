@@ -104,7 +104,7 @@ window.onload = function () {
                     var res = JSON.parse(xhr.response);
                     if (res.code === 0) {
                         alert('登陆成功')
-                        location.href = 'http://localhost/fanke/src/aaa.html';
+                        location.href = 'http://localhost/fanke/src/index.html';
                         //实现了页面的局部刷新
                         document.getElementById('result').innerHTML = '欢迎您，亲爱的' + res.data.un;
                     } else if (res.code === 1) {
@@ -214,7 +214,7 @@ window.onload = function () {
                     var res = JSON.parse(xhr.response);
                     if (res.code === 0) {
                         alert('登陆成功')
-                        location.href = 'http://localhost/fanke/src/aaa.html';
+                        location.href = 'http://localhost/fanke/src/index.html';
                         //实现了页面的局部刷新
                         document.getElementById('result').innerHTML = '欢迎您，亲爱的' + res.data.un;
                     } else if (res.code === 1) {

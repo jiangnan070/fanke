@@ -73,7 +73,7 @@ video {
     }
     @-ms-viewport { width: 1366px; } 
 }  
-img,span{
+img,span,em{
     cursor:pointer;
 }
 .top-nav{

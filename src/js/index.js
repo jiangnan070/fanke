@@ -67,12 +67,6 @@
       }
   }
 
-  $('img').on('click',function(){
-   window.location.href="./xiangqingye.html";
- })
- $('a').on('click',function(){
-   window.location.href="./xiangqingye.html";
- })
 
 
   //回到顶部功能
@@ -285,3 +279,19 @@ setInterval(function(){
   $('.span4').html(c)},1000);
 
  
+  //跳转页面
+  $('img').on('click',function(){
+   window.location.href="./xiangqingye.html";
+ })
+ $('.em1').on('click',function(){
+   window.location.href="./login.html";
+ })
+ $('.em2').on('click',function(){
+   window.location.href="./registered.html";
+ })
+ $('.nav-c').on('click',function(){
+   window.location.href="./xiangqingye.html";
+ })
+ $('.wode').on('click',function(){
+   window.location.href="./cart.html";
+ })

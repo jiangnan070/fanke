@@ -12,8 +12,9 @@ window.onload = function () {
         var vanclUserNameError = document.getElementById("vanclUserNameError")
         // vanclPasswordError  密码格式错误提示框
         var vanclPasswordError = document.getElementById("vanclPasswordError")
-        //  登录按钮
+        //  普通登录按钮
         var vanclLogin = document.getElementById("vanclLogin")
+
 
         var usernameFlag = false;
         var passwordFlag = false;
@@ -56,7 +57,7 @@ window.onload = function () {
         }
 
 
-        // 点击登录按钮
+        // 点击普通登录按钮
         function getCookie(key) {
             var cookiestr = document.cookie;
             var list = cookiestr.split(";");
@@ -103,7 +104,7 @@ window.onload = function () {
                     var res = JSON.parse(xhr.response);
                     if (res.code === 0) {
                         alert('登陆成功')
-                        location.href = 'http://localhost/fanke/src/index.html';
+                        location.href = 'http://localhost/fanke/src/aaa.html';
                         //实现了页面的局部刷新
                         document.getElementById('result').innerHTML = '欢迎您，亲爱的' + res.data.un;
                     } else if (res.code === 1) {
@@ -114,8 +115,6 @@ window.onload = function () {
                 e.preventDefault ? e.preventDefault() : returnValue = false;
             }
         }
-
-
 
         // 快速登录js
         //  _quickmobilenumber手机号输入框
@@ -148,6 +147,7 @@ window.onload = function () {
                 return false;
             }
             else if (reg.test(quickMobileNumber.value)) {
+                usernameFlag = true;
                 phone.style = " visibility: hidden;";
             }
         }
@@ -164,13 +164,87 @@ window.onload = function () {
                 return false;
             }
             else if (reg.test(sjdx.value)) {
+                usernameFlag = true;
                 quickMobileValidCode.style = " visibility: hidden;";
+            }
+        }
+        // 点击快速登录按钮
+        function getCookie(key) {
+            var cookiestr = document.cookie;
+            var list = cookiestr.split(";");
+            for (var i in list) {
+                var arr = list[i].split("=");
+                if (trim(arr[0]) == key) {
+                    return arr[1];
+                }
+            }
+            return null;
+        }
+        //设置cookie
+        function setCookie(key, value, time) {
+            //时效
+            var date = new Date();
+            date.setDate(date.getDate() + time);
+            //设置时效
+            document.cookie = key + "=" + value + ";expires=" + date.toString();
+        }
+        function trim(str) {
+            return str.replace(/\s+/g, "");
+        }
+
+        //获取相关元素
+        var quickMobileNumber = document.getElementById('_quickmobilenumber');//用户名输入框
+               // 快速登录按钮
+       var btnQuickLogin = document.getElementById("_btnquicklogin");
+        // 自动读取cookie相关信息填充用户名和密码框
+        quickMobileNumber.value = getCookie('un');
+        btnQuickLogin.onclick = function (e) {
+            e = e || event;
+            //总验证
+            if (usernameFlag  === true) {
+                setCookie('un', quickMobileNumber.value, 10);
+                //系统能够一个对象,这个对象叫XMLHttpRequest,这个对象简称ajax对象,可以帮助我连接到一个页面,但是可以不跳页.
+                var xhr = new XMLHttpRequest();//创建一个ajax对象
+                //请求行
+                xhr.open('get', 'http://localhost/fanke/src/php/login-1.php?un=' + quickMobileNumber.value + '&pw=' + pwInp.value);
+                //请求主体
+                xhr.send(null);
+                //获取到响应的主体
+                xhr.onload = function () {
+                    var res = JSON.parse(xhr.response);
+                    if (res.code === 0) {
+                        alert('登陆成功')
+                        location.href = 'http://localhost/fanke/src/aaa.html';
+                        //实现了页面的局部刷新
+                        document.getElementById('result').innerHTML = '欢迎您，亲爱的' + res.data.un;
+                    } else if (res.code === 1) {
+                        alert('输入有误，请重新输入')
+                    }
+                }
+            } else {
+                e.preventDefault ? e.preventDefault() : returnValue = false;
             }
         }
         //  点击获取短信验证码按钮
         getSmsCode.onclick = function () {
-            alert("暂时木有这个功能")
+            function rand(n, m) {
+                return parseInt(Math.random() * (m - n + 1)) + n;
+            }
+            //数字字母混合验证码
+            var str = '';
+            for (var i = 0; i < 6; i++) {
+                var randCode = rand(48, 57);
+                if (randCode >= 58 && randCode <= 64 || randCode >= 91 && randCode <= 96) {
+                    //进来不满意这个结果，让他重新来一遍
+                    i--;
+                }
+                else {
+                    str += String.fromCharCode(randCode)
+                }
+            }
+            sjdx.value = str;
         }
+
         //  随机获取6位字母数字组合验证码
         yzm.innerHTML = "d2f7g5";
         hqtxyzm.onclick = function () {

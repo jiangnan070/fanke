@@ -46,7 +46,7 @@ gulp.task('image', function (done) {
     done();
 })
 //执行所有任务
-gulp.task('minify',gulp.series(gulp.parallel('js','css','html'),function(done){
+gulp.task('minify',gulp.series(gulp.parallel('js','css','html','image'),function(done){
     browser.reload()
     done();
 }))

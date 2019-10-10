@@ -8,7 +8,6 @@ gulp.task('css', function (done) {
     gulp.src('./src/css/*.scss')
     .pipe(loader.sass())
     .pipe(loader.minifyCss())
-<<<<<<< HEAD
 	.pipe(gulp.dest('./dist/css/'))
     done();
 })
@@ -25,19 +24,12 @@ gulp.task('image', function (done) {
     gulp.src('./src/images/**')
     .pipe(loader.imagemin())
     .pipe(gulp.dest('./dist/images/'));
-=======
-	.pipe(gulp.dest('./src/css/'))
->>>>>>> zhh
     done();
 })
 
 
 //执行所有任务
-<<<<<<< HEAD
 gulp.task('minify',gulp.series(gulp.parallel('js','css','html','image'),function(done){
-=======
-gulp.task('minify',gulp.series(gulp.parallel( 'css'),function(done){
->>>>>>> zhh
     browser.reload()
     done();
 }))

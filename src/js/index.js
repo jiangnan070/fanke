@@ -295,3 +295,6 @@ setInterval(function(){
  $('.wode').on('click',function(){
    window.location.href="./cart.html";
  })
+ $('.wx').on("mouseenter",function(){
+    alert("凡客微信号"+123456)
+ })

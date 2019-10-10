@@ -9,6 +9,9 @@ $(function () {
       var pwFlag = false;
       var yzFlag = false;
       var qrFlag = false;
+      var dw = false;
+      var unFlag1 = false;
+      var pwFlag1 = false;
       return {
          //初始入口
          init() {
@@ -41,97 +44,16 @@ $(function () {
             })
             //切换页
             $('[name=register]').each(function (index, dom) {
-               $(dom).on('click', function () {
+               $(dom).on('change', function () {
                   //有凡客账号
                   if (index === 0) {
+                     dw = true;
                      $('[name=register]').eq(0).prop('checked', true);
                      $('[name=register]').eq(1).prop('checked', false);
                      $('.registerId').eq(1).hide()
                      $('.registerId').eq(0).show();
                      $('.submitBox').children('span:nth-child(2)').remove();
                      $('.submitBox').children('span:nth-child(1)').html('登陆');
-                     //已有账号
-                     if ($('[name=register]').eq(0).prop('checked') === true) {
-                        $('.loignReg').each(function (index, dom) {
-                           //获取焦点
-                           $(dom).on('focus', function () {
-                              //用户名
-                              if (index === 0) {
-                                 $('p.errorVerb').eq(0).css(textBlock);
-                                 $('p.errorVerb').eq(0).text('6-16位字符，字母，数字和符号组成');
-                              }
-                              //密码
-                              if (index === 1) {
-                                 $('p.errorVerb').eq(1).css(textBlock);
-                                 $('p.errorVerb').eq(1).text('6-16位字符，字母，数字和符号组成');
-                              }
-                           })
-
-                           //失去焦点
-                           $(dom).on('blur', function () {
-                              //用户名
-                              if (index === 0) {
-                                 if (reg.test(this.value) === true) {
-                                    unFlag = true;
-                                    $('p.errorVerb').eq(0).css(textNone);
-                                 } else {
-
-                                    $('p.errorVerb').eq(0).text('用户名必须是6-16位，数字，大小字母，和符号组成');
-                                    $('p.errorVerb').eq(0).css({ display: 'block', color: 'red' });
-                                 }
-                              }
-                              //密码
-                              if (index === 1) {
-                                 if (reg.test(this.value) === true) {
-                                    pwFlag = true;
-                                    $('p.errorVerb').eq(1).css(textNone);
-                                 } else {
-                                    $('p.errorVerb').eq(1).text('用户名必须是6-16位，数字，大小字母，和符号组成');
-                                    $('p.errorVerb').eq(1).css({ display: 'block', color: 'red' });
-                                 }
-                              }
-                           })
-                        })
-
-                        //提交事件
-                        $('.fromSubmit').on('click', function (e) {
-                           var un = $('.unlogin').val();
-                           var pw = $('.pwlogin').val();
-
-                           if ((unFlag && pwFlag) === true) {
-                              $.ajax({
-                                 url: 'http://10.36.144.236/fanke/src/php/login.php',
-                                 type: 'POST',
-                                 dataType: "JSON",
-                                 data: { un: un, pw: pw },
-                                 success: function (res) {
-                                    if (res.code === 0) {
-                                       alert('登录成功')
-                                       location.href = 'http://10.36.144.236/fanke/src/index.html';
-                                    } else if (res.code === 1) {
-                                       alert('输入有误，请重新输入')
-                                    }
-                                 }
-                              })
-                           } else {
-                              $('.loignReg').each(function (index, dom) {
-                                 if (index === 0) {
-                                    if (this.value === '') {
-                                       $('p.errorVerb').eq(0).text('用户名不能为空');
-                                       $('p.errorVerb').eq(0).css({ display: 'block', color: 'red' });
-                                    }
-                                 } else if (index === 1) {
-                                    if (this.value === '') {
-                                       $('p.errorVerb').eq(1).text('密码不能为空');
-                                       $('p.errorVerb').eq(1).css({ display: 'block', color: 'red' });
-                                    }
-                                 }
-                              })
-                              e.preventDefault();
-                           }
-
-                        })
-                     }
                      return;
                   }
                   //没有凡客账号
@@ -140,7 +62,7 @@ $(function () {
                      $('.yzmbox').css('color', _this.common().color());
                      $('[name=register]').eq(1).prop('checked', true);
                      $('[name=register]').eq(0).prop('checked', false);
-                     $('.registerId').eq(0).hide()
+                     $('.registerId').eq(0).hide();
                      $('.registerId').eq(1).show();
                      var span = $('<span style="cursor:pointer;">不关联，直接购物</span>');
                      $('.submitBox').append(span)
@@ -149,6 +71,49 @@ $(function () {
                   }
                })
             })
+            //已有账号
+            $('.loignReg').each(function (index, dom) {
+               //获取焦点
+               $(dom).on('focus', function () {
+                  //用户名
+                  if (index === 0) {
+                     $('p.errorVerb').eq(0).css(textBlock);
+                     $('p.errorVerb').eq(0).text('6-16位字符，字母，数字和符号组成');
+                  }
+                  //密码
+                  if (index === 1) {
+                     $('p.errorVerb').eq(1).css(textBlock);
+                     $('p.errorVerb').eq(1).text('6-16位字符，字母，数字和符号组成');
+                  }
+               })
+
+               //失去焦点
+               $(dom).on('blur', function () {
+                  //用户名
+                  if (index === 0) {
+                     if (reg.test(this.value) === true) {
+                        unFlag1 = true;
+                        console.log(10)
+                        $('p.errorVerb').eq(0).css(textNone);
+                     } else {
+
+                        $('p.errorVerb').eq(0).text('用户名必须是6-16位，数字，大小字母，和符号组成');
+                        $('p.errorVerb').eq(0).css({ display: 'block', color: 'red' });
+                     }
+                  }
+                  //密码
+                  if (index === 1) {
+                     if (reg.test(this.value) === true) {
+                        pwFlag1 = true;
+                        $('p.errorVerb').eq(1).css(textNone);
+                     } else {
+                        $('p.errorVerb').eq(1).text('用户名必须是6-16位，数字，大小字母，和符号组成');
+                        $('p.errorVerb').eq(1).css({ display: 'block', color: 'red' });
+                     }
+                  }
+               })
+            })
+
             //没有账号先注册
             if ($('[name=register]').eq(1).prop('checked') === true) {
                $('.inpReg').each(function (index, dom) {
@@ -225,8 +190,43 @@ $(function () {
 
                //提交事件
                $('.fromSubmit').on('click', function (e) {
+                  var un1 = $('.unlogin').val();
+                  var pw1 = $('.pwlogin').val();
                   var un = $('.unreg').val();
                   var pw = $('.pwreg').val();
+                  if ((unFlag1 && pwFlag1) === true) {
+                     console.log(1)
+                     $.ajax({
+                        url: 'http://10.36.144.236/fanke/src/php/login.php',
+                        type: 'POST',
+                        dataType: "JSON",
+                        data: { un1: un1, pw1: pw1 },
+                        success: function (res) {
+                           if (res.code === 0) {
+                              alert('登录成功')
+                              location.href = 'http://10.36.144.236/fanke/src/index.html';
+                           } else if (res.code === 1) {
+                              alert('输入有误，请重新输入')
+                           }
+                        }
+                     })
+                     return;
+                  }  else {
+                     $('.loignReg').each(function (index, dom) {
+                        if (index === 0) {
+                           if (this.value === '') {
+                              $('p.errorVerb').eq(0).text('用户名不能为空');
+                              $('p.errorVerb').eq(0).css({ display: 'block', color: 'red' });
+                           }
+                        } else if (index === 1) {
+                           if (this.value === '') {
+                              $('p.errorVerb').eq(1).text('密码不能为空');
+                              $('p.errorVerb').eq(1).css({ display: 'block', color: 'red' });
+                           }
+                        }
+                     })
+
+                  }
 
                   if ((unFlag && pwFlag && yzFlag && qrFlag) === true) {
                      $.ajax({
@@ -269,10 +269,9 @@ $(function () {
                      })
                      e.preventDefault();
                   }
-
+                  
                })
             }
-
          },
          //公用功能
          common() {

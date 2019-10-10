@@ -1,8 +1,8 @@
 <?php 
  include './connect.php';
  //获取请求参数:用户名和密码
- $username = $_REQUEST['un'];
- $password = $_REQUEST['pw'];
+ $username = $_REQUEST['un1'];
+ $password = $_REQUEST['pw1'];
 
  //书写查询的sql语句
  $query = "SELECT * FROM user_info WHERE username='$username' and password='$password'";

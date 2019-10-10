@@ -44,7 +44,7 @@ $(function () {
                             <th>小计</th>
                             <th>操作</th>
                         </tr>
-                        <tr class="tr0">
+                        <tr class="cartTr0">
                             <td></td>
                             <td></td>
                             <td></td>
@@ -72,7 +72,7 @@ $(function () {
                                 ${productList[i].name}
                             </td>
                             <td>
-                                s
+                                <span class='cartSize'>s</span>
                             </td>
                             <td>
                                 ￥<em type="01">${productList[i].price}</em>
@@ -83,14 +83,14 @@ $(function () {
                                 <a href="#" class="iconfont icon-jiahaozhankai jia a-a add"></a>
                             </td>
                             <td>
-                                    ￥<em class="zj">${productList[i].price * productList[i].num}</em>
+                                    ￥<em class="zj">${productList[i].price * productList[i].num}</em><em>.00</em>
                             </td>
                             <td>
                                 <a href="#" class='delete'>删除</a>
                             </td>
                         </tr>`
             }
-            str += `<tr class="tr0">
+            str += `<tr class="cartTr0">
                         <td></td>
                         <td></td>
                         <td></td>
@@ -210,9 +210,11 @@ $(function () {
         // 隐藏trMain
         yinCan: function () {
             if ($('.trMain').size() <= 0) {
-                $('.cart').css('display', 'none')
+                $('.cart').css('display', 'none');
+                $('.cartBox5').css('display', 'block')
             }
-            if ($('.trMain').size() > 0) {
+            else{
+                $('.cart').css('display', 'block');
                 $('.cartBox5').css('display', 'none')
             }
         },
@@ -232,7 +234,7 @@ $(function () {
             for (var i = 0; i < zongJia.length; i++) {
                 zon += zongJia[0].innerHTML
             }
-            $('.em2').text(zon);
+            $('.cartEm2').text(zon);
         },
         qx:function(){
             $('.qx').on('click', function () {
@@ -271,7 +273,7 @@ $(function () {
     for (var i = 0; i < productList.length; i++) {
          console.log(productList[i])
          var cargo01=productList[i];
-          $('.a-1').on('click', function () {
+          $('.cartA-1').on('click', function () {
          if($('.xz').prop('checked')==true){
             if($('.cargoId').text().trim()==cargo01.id){
                 productList.splice(cargo01, 1);  //删除本地存储数据

@@ -32,7 +32,7 @@ i,em{
 }
 
 .cartBox4{
-    background: url(../image/newProm.gif)no-repeat left 10px;
+    background: url(../images/newProm.gif)no-repeat left 10px;
 }
 .cartBox4 span{
     display: inline-block;
@@ -46,10 +46,10 @@ i,em{
     color: #fff
 }
 .cartBox5{
-    margin:50px 0;
+    margin:70px 0 40px 0;          /*修改*/
     color:gray;
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;        /*修改*/
     font-weight: 900;
 }
 .cartBox6 p{
@@ -65,7 +65,7 @@ i,em{
 }
 .cartBox7>.cartBox7-1{
     height: 50px;
-    background: url(../image/cart.png)no-repeat left top;
+    background: url(../images/cart.png)no-repeat left top;
     font-size: 20px;
     font-weight: 900;
     line-height: 50px;
@@ -93,43 +93,44 @@ i,em{
     background: #F8F8F8;
 }
 .trMain>td{
-    height: 50px;
-    line-height: 50px !important; 
+    height: 70px;                   /*修改*/
+    line-height: 70px !important;  /*修改*/
+    text-align: center;
 }
-.carTtr0{
+.cartTr>th{
+    text-align: center;  /*修改*/
+}
+.cartTr0{
     background: #fff;
     border: none
 }
-.carTbox11{
-    margin-top: 10px;
+.cartBox11{
+    margin-top: 30px;
     background: rgb(245, 242, 242) !important;
     /* height: 120px; */
 }
-.carTbox11-1{
+.cartBox11-1{
    font-size: 10px;
    height: 60px;
    line-height: 60px;
    margin-top: 20px;
 }
-.carTbox11-2{
+.box11-2{
     height: 60px;
     line-height: 30px;
 }
-.a-1{
+.cartA-1{
     color:#000;
     text-decoration: none;
 }
-.a-1:hover{
+.cartA-1:hover{
     color:red;
 }
-.s2>em:nth-child(1){
+.cartS2>em:nth-child(1){
     color: #a10000
 }
-.carTem1{
-    color: #a10000;
-    font-weight: 900;
-}
-.carTem1,.carTem2,.carTem3{
+
+.cartEm1,.cartEm2,.cartEm3{
     font-size: 20px;
     color: #a10000;
     font-weight: 900;
@@ -185,6 +186,16 @@ i,em{
 }
 .cart99{
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 70px;            /*修改*/
+    height: 70px;        /*修改*/
+    margin-left: 50px;  /*修改*/
+}
+.cartSize{              /*添加*/
+    font-size: 20px;
+}
+.delete{
+    color: #ccc;
+}
+.delete:hover{
+    color: #a10000;
 }

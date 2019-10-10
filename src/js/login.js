@@ -23,7 +23,7 @@ window.onload = function () {
             //把原来的提示清空
             // vanclUserNameError.innerHTML="";
             //书写验证用户名的正则
-            var reg = /^[1-9]\w{5,11}$/;
+            var reg = /^([0-9a-zA-Z]|(_|\W)){6,16}$/;
             //验证用户名是否合法
             if (!reg.test(vanclUserName.value)) {
                 vanclUserNameError.style = "visibility: visible;";
@@ -42,7 +42,7 @@ window.onload = function () {
             //把原来的提示清空
             // vanclUserNameError.innerHTML="";
             //书写验证密码的正则
-            var reg = /^[1-9]\w{5,11}$/;
+            var reg = /^([0-9a-zA-Z]|(_|\W)){6,16}$/;
             //验证用密码是否合法
             if (!reg.test(vanclPassword.value)) {
                 vanclPasswordError.style = "visibility: visible;";

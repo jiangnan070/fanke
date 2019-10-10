@@ -1,0 +1,221 @@
+ /* * 清除默认样式 * */
+ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+ dl, dt, dd, ul, ol, li, pre,form, fieldset, legend, button, input, textarea, 
+ th, td {
+     margin: 0;
+     padding: 0;   }
+ ul,li{list-style: none;}
+ a{text-decoration: none;}
+ i,em{font-style:normal;}
+
+/* 头部 */
+.container-width{
+    width:1200px;
+}
+.container-fluid-border{
+    border-bottom:3px solid red;
+}
+#head{
+    height:50px;
+    margin:15px 0 0 ;
+    padding:0 0 15px;
+}
+ #head a.logo{
+    float: left;
+    margin-top:-5px;
+    background: url(../images/logo_new.jpg) no-repeat center;
+    width:187px;
+    height:50px;
+ }
+ #head p a{
+    float: right;
+    color: black;
+    width:24px;
+    height: 16px;
+    font-size:12px;
+}
+#head p a:hover{
+ color:red;
+ border-bottom:1px solid red;
+}
+
+#bottom{
+    width:980px;
+    display: inline-table;
+    font:100 12px "宋体";
+    color:#999999;
+}
+.bottoms .bzp3{
+    margin:20px 0 20px 0;
+    width:980px;
+    height:14px;
+    font-size: 12px;
+}
+
+/* 主体 */
+.main{
+    margin-top:30px;
+    margin-bottom:10px;
+}
+.greetTitle{
+    border:1px solid #FF8C00;
+    text-align:center;
+    width:650px;
+    height:40px;
+    margin:0 auto;
+    line-height:40px;
+    background:rgba(255,140,6,0.2);
+}
+.main .userForm{
+    width:650px;
+    margin:0 auto;
+    position:relative;
+}
+.main .userForm .already{
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:10px;
+}
+.main .userForm .noId{
+    position:absolute;
+    left:10px;
+    z-index:10;
+}
+.main .userForm .registerId{
+    width:650px;
+    border:1px solid #999;
+    background:rgba(144,144,144,0.2);
+}
+.main .userForm .registerId .fromText{
+    display:inline-block;
+    width:120px;
+    text-align:right;
+    margin-left:100px;
+    font-size:12px;
+}
+.main .userForm .registerId .inp{
+    width:260px;
+    height:30px;
+    font-size:12px;
+    text-indent:10px;
+    margin-top:16px;
+    margin-left:10px;
+}
+.main .userForm .yzm{
+    margin-top:16px;
+    margin-bottom:20px;
+}
+.main .userForm .registerId .yzmlabel{
+   position:relative;
+   bottom:6px;
+}
+.main .userForm .registerId .inpyzm{
+    width:140px;
+    height:30px;
+    margin-left:10px;
+    text-indent:10px;
+    font-size:12px;
+}
+.main .userForm .registerId .yzmbox{
+    display:inline-block;
+    width:140px;
+    height:45px;
+    border:1px solid #999;
+    background:#fff;
+    text-align:center;
+    line-height:45px;
+    margin-left:5px;
+    cursor:pointer;
+    font-weight:900;
+    font-size:28px;
+}
+.main .submitBox{
+    text-align:center;
+    line-height:24px;
+    font-size:12px;
+    margin-top:20px;
+}
+.main .submitBox .sign{
+    display:inline-block;
+    width:50px;
+    height:22px;
+    background:#999;
+    border-radius:3px;
+    color:#fff;
+}
+.main .submitBox .sign:hover{
+    background:red;
+}
+.main .submitBox span:nth-child(2){
+    margin-left:5px;
+}
+
+/* 表单提示信息 */
+.main .userForm .regBox{
+    position:relative;
+}
+/* 已有账号 */
+.main .userForm .errorVerb{
+   display:none;
+   position:absolute;
+   top:45px;
+   font-size:12px;
+   margin-left:230px;
+   border:1px solid #000;
+   font-size:12px;
+   background:#fff;
+   border-radius:5px;
+   padding:1px 10px;
+   color:red;
+}
+/* 没有账号 */
+.main .userForm .errorHint{
+   display:none;
+   position:absolute;
+   top:45px;
+   font-size:12px;
+   margin-left:230px;
+   border:1px solid #000;
+   font-size:12px;
+   background:#fff;
+   border-radius:5px;
+   padding:1px 10px;
+   color:red;
+}
+/* 底部 */
+.container-fluid-bottom-border{
+    border-top:1px solid #999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#footer .redLogo{
+    background: url(https://ssl.vanclimg.com/login/login_spritesbg.png) no-repeat scroll 0 -400px transparent;
+    display: inline-block;
+    height: 42px;
+    width:113px;
+    margin:0 10px;
+}
+
+#footer .costume{
+    background: url(https://ssl.vanclimg.com/login/login_spritesbg.png) no-repeat scroll 0 -448px transparent;
+    display:inline-block;
+    height: 45px;
+    width:156px;
+    margin:0 10px;
+}
+#footer .wsjyBzzx{
+    background: url(https://ssl.vanclimg.com/login/login_spritesbg.png) no-repeat scroll 0 -494px transparent;
+    display:inline-block;
+    height: 42px;
+    width:96px;
+    margin:0 10px;
+}
+#footer .vanclMsg{
+    background: url(https://ssl.vanclimg.com/login/login_spritesbg.png) no-repeat scroll -97px -494px transparent;
+    display:inline-block;
+    height: 42px;
+    width:101px;
+    margin:0 10px;
+}

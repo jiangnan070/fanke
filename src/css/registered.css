@@ -76,16 +76,16 @@ main form .center .center-right .newtxt{
 }
 
 main form .center .center-right .newtxt .small-btn{
-    width: 247px;
+    width: 262px;
     height: 45px;
     border:1px solid #ccc;
-    padding-left:15px;
+    text-indent:15px;
 }
 main form .center .center-right .newtxt .big-btn{
-    width: 395px;
+    width: 410px;
     height: 45px;
     border:1px solid #ccc;
-    padding-left:15px;
+    text-indent:15px;
 }
 
 main form .center .center-right .reader{

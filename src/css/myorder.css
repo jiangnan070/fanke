@@ -1,5 +1,20 @@
 @charset "UTF-8";
-
+/** 清除默认样式 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+dl, dt, dd, ul, ol, li, pre,form, fieldset, legend, button, input, textarea, 
+th, td {
+    margin: 0;
+    padding: 0;   }
+ul,li{list-style: none;}
+a{text-decoration: none;}
+i,em{font-style:normal;}
+/* 重置 HTML5 元素 */
+ article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
+summary, time, mark, audio, video {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
 .vac{
     font-size: 12px;
     width: 390px;
@@ -30,15 +45,15 @@
 }
 
 .li{
-    background: url(../img/notice.png) no-repeat;
+    background: url(../images/hqwnotice.png) no-repeat;
     background-position: right;
     width: 77px;
     float: left;
     /* padding-right: 107px; */
 }
 .gonggao{
-    background: url(../img/notice.png) no-repeat;
-    background: url(../img/w1.jpg) no-repeat;
+    background: url(../images/hqwnotice.png) no-repeat;
+    background: url(../images/hqww1.jpg) no-repeat;
     background-position: right;
     width: 77px;height: 30px;
     /* position: absolute; */
@@ -49,7 +64,7 @@
 .xinlang{
     width: 18px;
     height: 30px;
-    background: url(../img/w2.jpg)no-repeat;
+    background: url(../images/hqww2.jpg)no-repeat;
     background-position: right;
     line-height: 30px;
     /* padding-left: 370px; */
@@ -206,7 +221,7 @@
     float: right;
     font:bold 12px "MicrosoftYaHei";
     line-height: 29px;
-    background: url("../img/w7.png") no-repeat;
+    background: url("../images/hqww7.png") no-repeat;
     background-position-x: left;
     background-position-y: center;
 }

@@ -73,9 +73,9 @@ video {
     }
     @-ms-viewport { width: 1366px; } 
 }  
-/* img{
+img,span{
     cursor:pointer;
-} */
+}
 .top-nav{
     width: 72px;
     height: 280px;
@@ -95,7 +95,7 @@ video {
     line-height: 50px;
 
 }
-.back-top a{
+.back-top span{
     display: block;
     color: #fff;
     width: 100%;
@@ -233,7 +233,7 @@ nav div {
     float: left;
 }
 
-nav a {
+nav .nav-a {
     display: block;
     float: left;
     width: 90px;
@@ -635,6 +635,7 @@ footer .foot-box .p1 {
     margin-top: 32px;
     line-height: 31px;
     background: red;
+    color: #f8e9e9
 }
 
 footer .foot-box .p2 {
@@ -696,4 +697,106 @@ footer .foot-box .p3 {
 }
 
 
+/* 下拉导航 */
+nav{
+    position: relative;
+}
+.xiala0{
+    position: absolute;
+    top:41px;
+    left:27.6%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+ 
+}
+.nav-a1{
+    display: block;
+    width: 92px;
+    color: #333
 
+
+}
+
+.xiala1{
+    position: absolute;
+    top:41px;
+    left:35.3%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.xiala2{
+    position: absolute;
+    top:41px;
+    left:43%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.xiala3{
+    position: absolute;
+    top:41px;
+    left:50.7%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.xiala4{
+    position: absolute;
+    top:41px;
+    left:58.4%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.xiala5{
+    position: absolute;
+    top:41px;
+    left:66.1%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.xiala6{
+    position: absolute;
+    top:41px;
+    left:73.8%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.xiala7{
+    position: absolute;
+    top:41px;
+    left:81.5%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+.xiala8{
+    position: absolute;
+    top:41px;
+    left:89.1%;
+    z-index: 99;
+    line-height: 42px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+.xiala0,.xiala1,.xiala2,.xiala3,.xiala4,.xiala5,.xiala8,.xiala6,.xiala7{
+    display:none;
+}

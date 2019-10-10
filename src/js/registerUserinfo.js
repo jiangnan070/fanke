@@ -9,7 +9,6 @@ $(function () {
       var pwFlag = false;
       var yzFlag = false;
       var qrFlag = false;
-      var dw = false;
       var unFlag1 = false;
       var pwFlag1 = false;
       return {
@@ -47,17 +46,27 @@ $(function () {
                $(dom).on('change', function () {
                   //有凡客账号
                   if (index === 0) {
-                     dw = true;
+                     $('.unlogin').attr('name','un');
+                     $('.pwlogin').attr('name','pw');
+                     $('.unreg').removeAttr('name','un');
+                     $('.pwreg').removeAttr('name','un');
                      $('[name=register]').eq(0).prop('checked', true);
                      $('[name=register]').eq(1).prop('checked', false);
                      $('.registerId').eq(1).hide()
                      $('.registerId').eq(0).show();
                      $('.submitBox').children('span:nth-child(2)').remove();
                      $('.submitBox').children('span:nth-child(1)').html('登陆');
+                     if ($('.loignReg').val() !== '') {
+                        unFlag1 = true;
+                     }
                      return;
                   }
                   //没有凡客账号
                   if (index === 1) {
+                     $('.unreg').attr('name','un');
+                     $('.pwreg').attr('name','pw');
+                     $('.unlogin').removeAttr('name','un');
+                     $('.pwlogin').removeAttr('name','un');
                      $('.yzmbox').html(_this.common().yzm(6));
                      $('.yzmbox').css('color', _this.common().color());
                      $('[name=register]').eq(1).prop('checked', true);
@@ -67,6 +76,18 @@ $(function () {
                      var span = $('<span style="cursor:pointer;">不关联，直接购物</span>');
                      $('.submitBox').append(span)
                      $('.submitBox').children('span:nth-child(1)').html('确定');
+                     if ($('.unreg').val() !== '' || $('.pwreg').val() !== '' || $('.yzreg').val() !== '' || $('.qrreg').val() !== '') {
+                        unFlag = true;
+                        pwFlag = true;
+                        qrFlag = true;
+                        if ($('.inpReg').eq(3).val().toLowerCase() === $('.yzmbox').text().toLowerCase()) {
+                           yzFlag = true;
+                           $('p.errorHint').eq(3).css(textNone);
+                        } else {
+                           $('p.errorHint').eq(3).text('验证码错误');
+                           $('p.errorHint').eq(3).css({ display: 'block', color: 'red' });
+                        }
+                     }
                      return;
                   }
                })
@@ -93,7 +114,6 @@ $(function () {
                   if (index === 0) {
                      if (reg.test(this.value) === true) {
                         unFlag1 = true;
-                        console.log(10)
                         $('p.errorVerb').eq(0).css(textNone);
                      } else {
 
@@ -190,17 +210,17 @@ $(function () {
 
                //提交事件
                $('.fromSubmit').on('click', function (e) {
-                  var un1 = $('.unlogin').val();
-                  var pw1 = $('.pwlogin').val();
-                  var un = $('.unreg').val();
-                  var pw = $('.pwreg').val();
+                  var un = $('[name=un]').val();
+                  var pw = $('[name=pw]').val();
+                  //登陆
                   if ((unFlag1 && pwFlag1) === true) {
-                     console.log(1)
+                     _this.cookie().setCookie('un', un, 10);
+                     _this.cookie().setCookie('pw', pw, 10);
                      $.ajax({
                         url: 'http://10.36.144.236/fanke/src/php/login.php',
                         type: 'POST',
                         dataType: "JSON",
-                        data: { un1: un1, pw1: pw1 },
+                        data: { un: un, pw: pw },
                         success: function (res) {
                            if (res.code === 0) {
                               alert('登录成功')
@@ -211,7 +231,7 @@ $(function () {
                         }
                      })
                      return;
-                  }  else {
+                  } else {
                      $('.loignReg').each(function (index, dom) {
                         if (index === 0) {
                            if (this.value === '') {
@@ -229,6 +249,8 @@ $(function () {
                   }
 
                   if ((unFlag && pwFlag && yzFlag && qrFlag) === true) {
+                     _this.cookie().setCookie('un', un, 10);
+                     _this.cookie().setCookie('pw', pw, 10);
                      $.ajax({
                         url: 'http://10.36.144.236/fanke/src/php/register.php',
                         type: 'POST',
@@ -269,7 +291,7 @@ $(function () {
                      })
                      e.preventDefault();
                   }
-                  
+
                })
             }
          },
@@ -310,6 +332,32 @@ $(function () {
                      }
                   }
                   return str;
+               }
+            }
+         },
+         cookie() {
+            return {
+               getCookie(key) {
+                  var cookiestr = document.cookie;
+                  var list = cookiestr.split(";");
+                  for (var i in list) {
+                     var arr = list[i].split("=");
+                     if (this.trim(arr[0]) == key) {
+                        return arr[1];
+                     }
+                  }
+                  return null;
+               },
+               //设置cookie
+               setCookie(key, value, time) {
+                  //时效
+                  var date = new Date();
+                  date.setDate(date.getDate() + time);
+                  //设置时效
+                  document.cookie = key + "=" + value + ";expires=" + date.toString();
+               },
+               trim(str) {
+                  return str.replace(/\s+/g, "");
                }
             }
          }

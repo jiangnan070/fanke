@@ -322,25 +322,7 @@ $(function () {
                      $('.newtxt').eq(4).append($yz);
                   }
                   if ((flag1 && flag2 && flag3 && flag4 && flag5) === true) {
-<<<<<<< HEAD
-                     var u = $('[name=un]').val();
-                     var p = $('[name=pw]').val();
-                     $.ajax({
-                        url: 'http://10.36.144.236/fanke/src/php/register.php',
-                        type: 'POST',
-                        dataType: "JSON",
-                        data:{un:u,pw:p},
-                        success: function (res) {
-                           if(res.code === 0){
-                              alert('注册成功，请先第一次登录')
-                              location.href = 'http://10.36.144.236/fanke/src/login.html';
-                           }else if(res.code === 1){
-                              alert('用户名已存在，请重新输入')
-                           }
-                        }
-                     })
-=======
-                     location.href = 'http://10.36.144.236/fanke/src/registerUserinfo.html';
+                     location.href = 'http://localhost/fanke/dist/registerUserinfo.html';
                      // var phone = $('[name=phone]').val();
                      // $.ajax({
                      //    url: 'http://10.36.144.236/fanke/src/php/phone.php',
@@ -357,7 +339,6 @@ $(function () {
                      //       }
                      //    }
                      // })
->>>>>>> wujunjie
                   }
 
                } else {

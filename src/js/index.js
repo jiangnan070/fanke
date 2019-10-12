@@ -113,7 +113,7 @@
      $(".nav-box1").mouseenter(function(){ 
         //获取数据    
         $.ajax({
-          url:'http://10.36.144.28/fanke/src/data.json',
+          url:'http://10.36.144.239/fanke1/src/data.json',
           success:function(res){
          var aAttr=$('.xiala0 .nav-a1');
               for(var i=0;i<aAttr.length;i++){
@@ -132,7 +132,7 @@
   $(function(){
       $(".nav-box2").mouseenter(function(){     
        $.ajax({
-          url:'http://10.36.144.28/fanke/src/data.json',
+          url:'http://10.36.144.239/fanke1/src/data.json',
           success:function(res){
              
          var aAttr=$('.xiala1 .nav-a1');
@@ -152,7 +152,7 @@
    $(function(){
       $(".nav-box3").mouseenter(function(){  
        $.ajax({
-          url:'http://10.36.144.28/fanke/src/data.json',
+          url:'http://10.36.144.239/fanke1/src/data.json',
           success:function(res){
          var aAttr=$('.xiala2 .nav-a1');
               for(var i=0;i<aAttr.length;i++){
@@ -170,7 +170,7 @@
    $(function(){
       $(".nav-box4").mouseenter(function(){   
        $.ajax({
-          url:'http://10.36.144.28/fanke/src/data.json',
+          url:'http://10.36.144.239/fanke1/src/data.json',
           success:function(res){
          var aAttr=$('.xiala3 .nav-a1');
               for(var i=0;i<aAttr.length;i++){
@@ -188,7 +188,7 @@
    $(function(){
       $(".nav-box5").mouseenter(function(){ 
        $.ajax({
-          url:'http://10.36.144.28/fanke/src/data.json',
+          url:'http://10.36.144.239/fanke1/src/data.json',
           success:function(res){
          var aAttr=$('.xiala4 .nav-a1');
               for(var i=0;i<aAttr.length;i++){
@@ -206,7 +206,7 @@
    $(function(){
       $(".nav-box6").mouseenter(function(){ 
        $.ajax({
-          url:'http://10.36.144.28/fanke/src/data.json',
+          url:'http://10.36.144.239/fanke1/src/data.json',
           success:function(res){
          var aAttr=$('.xiala5 .nav-a1');
               for(var i=0;i<aAttr.length;i++){
@@ -224,7 +224,7 @@
    $(function(){
       $(".nav-box7").mouseenter(function(){  
        $.ajax({
-          url:'http://10.36.144.28/fanke/src/data.json',
+          url:'http://10.36.144.239/fanke1/src/data.json',
           success:function(res){
          var aAttr=$('.xiala6 .nav-a1');
               for(var i=0;i<aAttr.length;i++){
@@ -242,7 +242,7 @@
    $(function(){
       $(".nav-box8").mouseenter(function(){  
        $.ajax({
-          url:'http://10.36.144.28/fanke/src/data.json',
+          url:'http://10.36.144.239/fanke1/src/data.json',
           success:function(res){
          var aAttr=$('.xiala7 .nav-a1');
               for(var i=0;i<aAttr.length;i++){
@@ -293,8 +293,31 @@ setInterval(function(){
    window.location.href="./xiangqingye.html";
  })
  $('.wode').on('click',function(){
-   window.location.href="./cart.html";
+   window.location.href="./myorder.html";
  })
  $('.wx').on("mouseenter",function(){
     alert("凡客微信号"+123456)
  })
+
+ //获取用户名
+$(function(){
+  var cookies=getCookie();
+  console.log(cookies);
+
+})
+//获取cookie
+
+function getCookie(key) {
+   var cookiestr = document.cookie;
+   var list = cookiestr.split(";");
+   for (var i in list) {
+      var arr = list[i].split("=");
+      if (trim(arr[0]) == key) {
+         return arr[1];
+      }
+   }
+   return null;
+}
+function trim(str) {
+   return str.replace(/\s+/g, "");
+}

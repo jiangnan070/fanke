@@ -5,7 +5,7 @@ var browser = require('browser-sync').create();//搭建静态服务器插件
 //压缩css
 gulp.task('css', function (done) {
 
-    gulp.src('./src/css/*.scss')
+    gulp.src('./src/css/**')
     .pipe(loader.sass())
     .pipe(loader.minifyCss())
 	.pipe(gulp.dest('./dist/css/'))
@@ -24,6 +24,21 @@ gulp.task('image', function (done) {
     gulp.src('./src/images/**')
     .pipe(loader.imagemin())
     .pipe(gulp.dest('./dist/images/'));
+    done();
+})
+//压缩js
+gulp.task('js', function (done) {
+    //读取文件的数据流
+    gulp.src('./src/js/*.js')
+        //babel:es6转es5
+        .pipe(loader.babel({
+            presets:['@babel/env']
+        }))    
+        //再压缩
+        .pipe(loader.uglify())
+        //给文件写入数据流
+        .pipe(gulp.dest('./dist/js/'));
+    //执行done表示任务完成
     done();
 })
 

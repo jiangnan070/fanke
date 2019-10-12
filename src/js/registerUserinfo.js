@@ -217,14 +217,14 @@ $(function () {
                      _this.cookie().setCookie('un', un, 10);
                      _this.cookie().setCookie('pw', pw, 10);
                      $.ajax({
-                        url: 'http://10.36.144.236/fanke/src/php/login.php',
+                        url: 'http://localhost/fanke/dist/php/login.php',
                         type: 'POST',
                         dataType: "JSON",
                         data: { un: un, pw: pw },
                         success: function (res) {
                            if (res.code === 0) {
                               alert('登录成功')
-                              location.href = 'http://10.36.144.236/fanke/src/index.html';
+                              location.href = '../index.html';
                            } else if (res.code === 1) {
                               alert('输入有误，请重新输入')
                            }
@@ -252,14 +252,14 @@ $(function () {
                      _this.cookie().setCookie('un', un, 10);
                      _this.cookie().setCookie('pw', pw, 10);
                      $.ajax({
-                        url: 'http://10.36.144.236/fanke/src/php/register.php',
+                        url: 'http://localhost/fanke/dist/php/register.php',
                         type: 'POST',
                         dataType: "JSON",
                         data: { un: un, pw: pw },
                         success: function (res) {
                            if (res.code === 0) {
                               alert('注册成功，请登录')
-                              location.href = 'http://10.36.144.236/fanke/src/login.html';
+                              location.href = '../login.html';
                            } else if (res.code === 1) {
                               alert('用户名已存在，请重新输入')
                            }

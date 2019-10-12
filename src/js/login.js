@@ -43,7 +43,7 @@ window.onload = function () {
             //把原来的提示清空
             // vanclUserNameError.innerHTML="";
             //书写验证密码的正则
-            var reg = /^[\w]\w{5,11}$/;
+            var reg = /^([0-9a-zA-Z]|(_|\W)){6,16}$/;
             //验证用密码是否合法
             if (!reg.test(vanclPassword.value)) {
                 vanclPasswordError.style = "visibility: visible;";
@@ -87,6 +87,10 @@ window.onload = function () {
         //自动读取cookie相关信息填充用户名和密码框
         unInp.value = getCookie('un');
         pwInp.value = getCookie('pw');
+        if(unInp.value!==''&&pwInp.value!==''){
+            usernameFlag = true;
+            passwordFlag = true;
+        }
         vanclLogin.onclick = function (e) {
             e = e || event;
             //总验证
@@ -96,7 +100,7 @@ window.onload = function () {
                 //系统能够一个对象,这个对象叫XMLHttpRequest,这个对象简称ajax对象,可以帮助我连接到一个页面,但是可以不跳页.
                 var xhr = new XMLHttpRequest();//创建一个ajax对象
                 //请求行
-                xhr.open('get', 'http://localhost/fanke/src/php/login.php?un=' + unInp.value + '&pw=' + pwInp.value);
+                xhr.open('get', 'http://10.36.144.239/fanke1/src/php/login.php?un=' + unInp.value + '&pw=' + pwInp.value);
                 //请求主体
                 xhr.send(null);
                 //获取到响应的主体
@@ -104,7 +108,7 @@ window.onload = function () {
                     var res = JSON.parse(xhr.response);
                     if (res.code === 0) {
                         alert('登陆成功')
-                        location.href = 'http://localhost/fanke/src/index.html';
+                        location.href = 'http://10.36.144.239/fanke1/src/index.html';
                         //实现了页面的局部刷新
                         document.getElementById('result').innerHTML = '欢迎您，亲爱的' + res.data.un;
                     } else if (res.code === 1) {
@@ -206,7 +210,7 @@ window.onload = function () {
                 //系统能够一个对象,这个对象叫XMLHttpRequest,这个对象简称ajax对象,可以帮助我连接到一个页面,但是可以不跳页.
                 var xhr = new XMLHttpRequest();//创建一个ajax对象
                 //请求行
-                xhr.open('get', 'http://localhost/fanke/src/php/login-1.php?un=' + quickMobileNumber.value + '&pw=' + pwInp.value);
+                xhr.open('get', 'http://10.36.144.239/fanke1/src/php/login-1.php?un=' + quickMobileNumber.value + '&pw=' + pwInp.value);
                 //请求主体
                 xhr.send(null);
                 //获取到响应的主体
@@ -214,7 +218,7 @@ window.onload = function () {
                     var res = JSON.parse(xhr.response);
                     if (res.code === 0) {
                         alert('登陆成功')
-                        location.href = 'http://localhost/fanke/src/index.html';
+                        location.href = 'http://10.36.144.239/fanke1/src/index.html';
                         //实现了页面的局部刷新
                         document.getElementById('result').innerHTML = '欢迎您，亲爱的' + res.data.un;
                     } else if (res.code === 1) {
